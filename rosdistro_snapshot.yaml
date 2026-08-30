@@ -1067,10 +1067,6 @@ compass_interfaces:
   tag: release/jazzy/compass_interfaces/3.0.2-1
   url: https://github.com/ros2-gbp/compass-release.git
   version: 3.0.2
-compass_msgs:
-  tag: release/jazzy/compass_msgs/0.2.2-1
-  url: https://github.com/manankharwar/fusioncore-release.git
-  version: 0.2.2
 composition:
   tag: release/jazzy/composition/0.33.10-1
   url: https://github.com/ros2-gbp/demos-release.git
@@ -2463,22 +2459,6 @@ fuse_viz:
   tag: release/jazzy/fuse_viz/1.1.5-1
   url: https://github.com/ros2-gbp/fuse-release.git
   version: 1.1.5
-fusioncore_core:
-  tag: release/jazzy/fusioncore_core/0.2.2-1
-  url: https://github.com/manankharwar/fusioncore-release.git
-  version: 0.2.2
-fusioncore_datasets:
-  tag: release/jazzy/fusioncore_datasets/0.2.2-1
-  url: https://github.com/manankharwar/fusioncore-release.git
-  version: 0.2.2
-fusioncore_gazebo:
-  tag: release/jazzy/fusioncore_gazebo/0.2.2-1
-  url: https://github.com/manankharwar/fusioncore-release.git
-  version: 0.2.2
-fusioncore_ros:
-  tag: release/jazzy/fusioncore_ros/0.2.2-1
-  url: https://github.com/manankharwar/fusioncore-release.git
-  version: 0.2.2
 game_controller_spl:
   tag: release/jazzy/game_controller_spl/4.1.0-1
   url: https://github.com/ros2-gbp/game_controller_spl-release.git
