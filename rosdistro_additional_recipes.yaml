@@ -258,3 +258,7 @@ ros2_medkit_topic_beacon:
   tag: release/jazzy/ros2_medkit_topic_beacon/0.6.0-1
   url: https://github.com/ros2-gbp/ros2_medkit-release.git
   version: 0.6.0
+robot_localization:
+  tag: upstream/3.10.1
+  url: https://github.com/ros2-gbp/robot_localization-release.git
+  version: 3.10.1

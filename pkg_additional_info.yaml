@@ -188,3 +188,5 @@ turtlebot4_gz_toolbox:
   build_number: 20
 realtime_tools:
   build_number: 19
+robot_localization:
+  build_number: 19

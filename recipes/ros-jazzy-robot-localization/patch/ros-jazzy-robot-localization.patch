@@ -1,0 +1,31 @@
+diff --git a/src/ros_filter.cpp b/src/ros_filter.cpp
+index 19d642a..23d6ad2 100644
+--- a/src/ros_filter.cpp
++++ b/src/ros_filter.cpp
+@@ -210,8 +210,7 @@ RosFilter<T>::on_configure(const rclcpp_lifecycle::State &)
+ 
+   // Set up transform broadcaster (must be before loadParams)
+   world_transform_broadcaster_ = std::make_shared<tf2_ros::TransformBroadcaster>(
+-    tf2_ros::TransformBroadcaster::RequiredInterfaces{
+-      get_node_parameters_interface(), get_node_topics_interface()});
++    get_node_parameters_interface(), get_node_topics_interface());
+ 
+   // Load all parameters - this declares and loads everything
+   // After this call, all parameters like print_diagnostics_, frequency_, etc. are available
+diff --git a/src/ros_robot_localization_listener.cpp b/src/ros_robot_localization_listener.cpp
+index a7c6bb6..f9b2b75 100644
+--- a/src/ros_robot_localization_listener.cpp
++++ b/src/ros_robot_localization_listener.cpp
+@@ -70,9 +70,9 @@ RosRobotLocalizationListener::RosRobotLocalizationListener(
+   rclcpp::SubscriptionOptions options)
+ : qos1_(1),
+   qos10_(10),
+-  odom_sub_(node, "odom/filtered", qos1_, options),
+-  accel_sub_(node, "acceleration/filtered", qos1_, options),
+-  sync_(10u, odom_sub_, accel_sub_),
++  odom_sub_(node, "odom/filtered", qos1_.get_rmw_qos_profile(), options),
++  accel_sub_(node, "acceleration/filtered", qos1_.get_rmw_qos_profile(), options),
++  sync_(odom_sub_, accel_sub_, 10u),
+   node_clock_(node->get_node_clock_interface()->get_clock()),
+   node_logger_(node->get_node_logging_interface()),
+   base_frame_id_(""),
